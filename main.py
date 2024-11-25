@@ -77,9 +77,9 @@ backend_url = "https://yuybackend.simpleproject.workers.dev"
 if __name__ == "__main__":
     print("시스템: 안녕하세요 육은영 상담사 챗봇입니다.")
     sleep(3)
-    print("시스템: 지금부터 상담을 진행하기 전 아이의 표정을 확인하여 아이의 기분에 맞춰 상담을 진행하겠습니다.")
+    print("시스템: 지금부터 상담을 진행하기 전 금쪽이의 표정을 확인하여 금쪽이의 기분에 맞춰 상담을 진행하겠습니다.")
     sleep(3)
-    choice = int(input("시스템: 아이의 표정을 인식하기 위해 사진을 업로드 하려면 1번 지금 사진을 찍으려면 2번을 입력해 주세요 : "))
+    choice = int(input("시스템: 금쪽이의 표정을 인식하기 위해 사진을 업로드 하려면 1번 지금 사진을 찍으려면 2번을 입력해 주세요 : "))
 
     file = None
     if choice == 1:
@@ -89,11 +89,11 @@ if __name__ == "__main__":
     else:
         print("잘못된 입력입니다. 처음부터 다시 시작해주세요.")
         exit(1)
-    print(f"시스템: 사진이 업로드 되었습니다. 지금부터 아이의 표정을 인식하겠습니다. 잠시만 기다려주세요.")
+    print(f"시스템: 사진이 업로드 되었습니다. 지금부터 금쪽이의 표정을 인식하겠습니다. 잠시만 기다려주세요.")
 
     class_name, confidence_score = predict(file)
 
-    print(f"시스템: 인식된 결과 아이의 표정은 {class_name}이며, 가능성은 {confidence_score * 100:.2f}% 입니다.")
+    print(f"시스템: 인식된 결과 금쪽이의 표정은 {class_name}이며, 가능성은 {confidence_score * 100:.2f}% 입니다.")
     sleep(3)
     print("육은영: 지금부터 상담을 시작하겠습니다. (상담을 바로 종료하려면 '/종료'를 입력해주세요.)")
 
@@ -112,8 +112,8 @@ if __name__ == "__main__":
         latest_response = responses[-1]
 
         if str(latest_response["content"]).find("|종료|") != -1:
-            print(f"시스템: {str(latest_response['content']).replace('|종료|', '')}")
-            sleep(1)
+            # print(f"시스템: {str(latest_response['content']).replace('|종료|', '')}")
+            # sleep(1)
             print("육은영: 상담을 종료히겠습니다. 행복한 하루 되세요.")
             break
 
