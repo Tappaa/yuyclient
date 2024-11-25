@@ -10,7 +10,6 @@ import openai
 
 import apiKeys
 
-# 사용후 api키 삭제
 openai.api_key = apiKeys.openai_api_key
 
 def file_select():
