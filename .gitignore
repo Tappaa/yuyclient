@@ -1,0 +1,14 @@
+.idea/
+.venv/
+
+# models
+#*.h5
+
+# sample images
+#sample/
+
+# api keys
+#apiKeys.py
+
+# python cache
+__pycache__/
