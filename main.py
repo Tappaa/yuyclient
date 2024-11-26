@@ -99,11 +99,11 @@ if __name__ == "__main__":
 
     conversation_messages = dict()
     conversation_messages["prompts"] = [
-        { "role": "user", "content": f"안녕하세요 육은영 상담사님. 저는 현재 {class_name} 상태 입니다." }
+        { "role": "user", "content": f"이 금쪽이의 표정은 {class_name}이며, 가능성은 {confidence_score * 100:.2f}% 입니다. 상담을 시작해주세요." }
     ]
 
     sleep(3)
-    print(f"나: {conversation_messages['prompts'][0]['content']}")
+    print(f"나: 안녕하세요 육은영 상담사님!")
 
     request = requests.post(backend_url, json=conversation_messages)
     while True:
